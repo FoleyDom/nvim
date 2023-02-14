@@ -81,3 +81,4 @@ bufferline.setup({
 		-- end
 	},
 })
+

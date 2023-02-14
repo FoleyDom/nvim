@@ -29,19 +29,19 @@ return {
 	},
 
 	-- Tabs
-	-- {
-	-- 	"akinsho/bufferline.nvim",
-	-- 	lazy = false,
-	-- 	config = function()
-	-- 		require("plugins.configs.bufferline")
-	-- 	end,
-	-- },
 	{
-		"romgrk/barbar.nvim",
+		"akinsho/bufferline.nvim",
+		lazy = false,
 		config = function()
-			require("plugins.configs.barbar")
+			require("plugins.configs.bufferline")
 		end,
 	},
+	-- {
+	-- 	"romgrk/barbar.nvim",
+	-- 	config = function()
+	-- 		require("plugins.configs.barbar")
+	-- 	end,
+	-- },
 	{ "moll/vim-bbye" },
 	{
 		"tiagovla/scope.nvim",
