@@ -28,8 +28,8 @@ toggleterm.setup({
 
 function _G.set_terminal_keymaps()
 	local opts = { noremap = true }
-	-- vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
-	-- vim.api.nvim_buf_set_keymap(0, "t", "jk", [[<C-\><C-n>]], opts)
+	vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
+	vim.api.nvim_buf_set_keymap(0, "t", "jk", [[<C-\><C-n>]], opts)
 	vim.api.nvim_buf_set_keymap(0, "t", "<m-h>", [[<C-\><C-n><C-W>h]], opts)
 	vim.api.nvim_buf_set_keymap(0, "t", "<m-j>", [[<C-\><C-n><C-W>j]], opts)
 	vim.api.nvim_buf_set_keymap(0, "t", "<m-k>", [[<C-\><C-n><C-W>k]], opts)
@@ -165,8 +165,8 @@ function _VERTICAL_TERM()
 	vertical_term:toggle(60)
 end
 
-vim.api.nvim_set_keymap("n", "<m-2>", "<cmd>lua _VERTICAL_TERM()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<m-2>", "<cmd>lua _VERTICAL_TERM()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<S-t>", "<cmd>lua _VERTICAL_TERM()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<S-w>", "<cmd>lua _VERTICAL_TERM()<CR>", { noremap = true, silent = true })
 
 local horizontal_term = Terminal:new({
 	direction = "horizontal",
