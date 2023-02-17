@@ -7,6 +7,13 @@ local actions = require("telescope.actions")
 telescope.load_extension("media_files")
 local icons = require("plugins.configs.icons")
 
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
+vim.keymap.set('n', '<C-p>', builtin.git_files, {})
+vim.keymap.set('n', '<leader>ps', function()
+	builtin.grep_string({ search = vim.fn.input("Grep > ") })
+end)
+
 telescope.setup({
 	defaults = {
 
@@ -94,7 +101,7 @@ telescope.setup({
 				["<PageDown>"] = actions.results_scrolling_down,
 
 				-- ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-				["<Tab>"] = actions.close,
+				--["<Tab>"] = actions.close,
 				-- ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
 				["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
 				["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
